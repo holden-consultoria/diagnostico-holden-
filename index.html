@@ -7,26 +7,24 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg:       #07090f;
-  --surf:     #0e1220;
-  --surf2:    #161c2e;
-  --surf3:    #1e2640;
-  --border:   rgba(255,255,255,0.07);
-  --border2:  rgba(255,255,255,0.14);
-  --text:     #e8eaf0;
-  --muted:    #7a8299;
-  --muted2:   #5a6280;
-  --accent:   #00a8e1;
-  --accent2:  #0090c5;
-  --blue:     #4f8ef7;
-  --gold:     #f5c842;
-  --danger:   #f06060;
-  --radius:   18px;
-  --rsm:      10px;
+  --bg:      #07090f;
+  --surf:    #0e1220;
+  --surf2:   #161c2e;
+  --surf3:   #1e2640;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.14);
+  --text:    #e8eaf0;
+  --muted:   #7a8299;
+  --muted2:  #5a6280;
+  --accent:  #00a8e1;
+  --accent2: #0090c5;
+  --blue:    #4f8ef7;
+  --gold:    #f5c842;
+  --danger:  #f06060;
+  --radius:  18px;
+  --rsm:     10px;
 }
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
@@ -37,411 +35,170 @@ body {
   justify-content: center;
   padding: 3rem 1rem 4rem;
 }
-
 .wrap { width: 100%; max-width: 660px; }
 
-/* ── Logo / Header ── */
-.top-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 2.5rem;
-}
+/* Logo / Header */
+.top-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 2.5rem; }
+.logo-name { font-family: 'DM Sans', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.01em; color: var(--text); line-height: 1.2; }
+.logo-event { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; margin-top: 2px; }
 
-.logo-name {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 800; font-size: 16px; letter-spacing: 0.01em;
-  color: var(--text);
-  line-height: 1.2;
-}
-.logo-event {
-  font-size: 12px; color: var(--muted); letter-spacing: 0.08em;
-  text-transform: uppercase; font-weight: 300;
-  margin-top: 2px;
-}
-
-/* ── Progress ── */
+/* Progress */
 .progress-bar-wrap { margin-bottom: 1.75rem; }
-.progress-meta {
-  display: flex; justify-content: space-between;
-  font-size: 11px; color: var(--muted); margin-bottom: 7px;
-  letter-spacing: 0.04em;
-}
-.prog-track {
-  height: 2px; background: var(--surf3); border-radius: 99px; overflow: hidden;
-}
-.prog-fill {
-  height: 100%; background: var(--accent); border-radius: 99px;
-  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-}
+.progress-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 7px; letter-spacing: 0.04em; }
+.prog-track { height: 2px; background: var(--surf3); border-radius: 99px; overflow: hidden; }
+.prog-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
 
-/* ── Section pill ── */
-.section-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(0,168,225,0.1);
-  border: 1px solid rgba(0,168,225,0.2);
-  border-radius: 99px;
-  padding: 4px 12px;
-  font-size: 11px; font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.section-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--accent);
-}
+/* Section pill */
+.section-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,168,225,0.1); border: 1px solid rgba(0,168,225,0.2); border-radius: 99px; padding: 4px 12px; font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+.section-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
-/* ── Card ── */
-.card {
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 2rem 1.75rem;
-}
+/* Card */
+.card { background: var(--surf); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 2rem 1.75rem; }
 
-/* ── Question ── */
-.q-number {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted2); margin-bottom: 0.75rem;
-}
-.q-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.2rem; font-weight: 700;
-  line-height: 1.4; color: var(--text);
-  margin-bottom: 1.5rem;
-}
-.q-sub {
-  font-size: 13px; color: var(--muted);
-  margin-top: -1rem; margin-bottom: 1.25rem;
-  line-height: 1.5;
-}
+/* Question */
+.q-number { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); margin-bottom: 0.75rem; }
+.q-text { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; font-weight: 700; line-height: 1.4; color: var(--text); margin-bottom: 1.5rem; }
+.q-sub { font-size: 13px; color: var(--muted); margin-top: -1rem; margin-bottom: 1.25rem; line-height: 1.5; }
 
-/* ── Options (radio) ── */
+/* Options (radio) */
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt {
-  display: flex; align-items: center; gap: 14px;
-  padding: 13px 16px;
-  background: var(--surf2);
-  border: 1px solid var(--border);
-  border-radius: var(--rsm);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  user-select: none;
-}
+.opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: var(--surf2); border: 1px solid var(--border); border-radius: var(--rsm); cursor: pointer; transition: border-color 0.2s, background 0.2s; user-select: none; }
 .opt:hover { border-color: var(--border2); background: var(--surf3); }
-.opt.sel   { border-color: var(--accent); background: rgba(0,168,225,0.07); }
-.opt-key {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
-  color: var(--muted); flex-shrink: 0;
-  transition: all 0.2s;
-}
-.opt.sel .opt-key {
-  background: var(--accent); color: #ffffff;
-  border-color: var(--accent);
-}
+.opt.sel { border-color: var(--accent); background: rgba(0,168,225,0.07); }
+.opt-key { width: 28px; height: 28px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; color: var(--muted); flex-shrink: 0; transition: all 0.2s; }
+.opt.sel .opt-key { background: var(--accent); color: #ffffff; border-color: var(--accent); }
 .opt-txt { font-size: 14px; line-height: 1.45; }
 
-/* ── Checkboxes ── */
+/* Checkboxes */
 .checks { display: flex; flex-direction: column; gap: 9px; }
-.chk {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 13px 16px;
-  background: var(--surf2);
-  border: 1px solid var(--border);
-  border-radius: var(--rsm);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  user-select: none;
-}
+.chk { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; background: var(--surf2); border: 1px solid var(--border); border-radius: var(--rsm); cursor: pointer; transition: border-color 0.2s, background 0.2s; user-select: none; }
 .chk:hover { border-color: var(--border2); background: var(--surf3); }
 .chk.chk-on { border-color: var(--accent); background: rgba(0,168,225,0.07); }
-.chk-box {
-  width: 18px; height: 18px; min-width: 18px;
-  border-radius: 5px;
-  background: var(--bg);
-  border: 1.5px solid var(--border2);
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 1px;
-  transition: all 0.2s;
-}
-.chk.chk-on .chk-box {
-  background: var(--accent); border-color: var(--accent);
-}
+.chk-box { width: 18px; height: 18px; min-width: 18px; border-radius: 5px; background: var(--bg); border: 1.5px solid var(--border2); display: flex; align-items: center; justify-content: center; margin-top: 1px; transition: all 0.2s; }
+.chk.chk-on .chk-box { background: var(--accent); border-color: var(--accent); }
 .chk-box svg { display: none; }
 .chk.chk-on .chk-box svg { display: block; }
 .chk-txt { font-size: 14px; line-height: 1.45; }
 
-/* ── Rating ── */
-.rating-row {
-  display: flex; gap: 6px; flex-wrap: wrap;
-  margin-top: 0.25rem;
-}
-.rat-btn {
-  width: 52px; height: 48px;
-  background: var(--surf2); border: 1px solid var(--border);
-  border-radius: var(--rsm);
-  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700;
-  color: var(--muted); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s;
-}
+/* Rating */
+.rating-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.25rem; }
+.rat-btn { width: 52px; height: 48px; background: var(--surf2); border: 1px solid var(--border); border-radius: var(--rsm); font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
 .rat-btn:hover { border-color: var(--border2); color: var(--text); }
-.rat-btn.sel   { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+.rat-btn.sel { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 
-/* ── Text input ── */
-.txt-input {
-  width: 100%;
-  background: var(--surf2);
-  border: 1px solid var(--border2);
-  border-radius: var(--rsm);
-  padding: 13px 16px;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none; resize: vertical;
-  min-height: 80px;
-  transition: border-color 0.2s;
-  line-height: 1.5;
-}
+/* Text input */
+.txt-input { width: 100%; background: var(--surf2); border: 1px solid var(--border2); border-radius: var(--rsm); padding: 13px 16px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; resize: vertical; min-height: 80px; transition: border-color 0.2s; line-height: 1.5; }
 .txt-input:focus { border-color: var(--accent); }
 .txt-input::placeholder { color: var(--muted2); }
 
+/* Field */
 .field { margin-bottom: 1.1rem; }
-.field label {
-  display: block; font-size: 12px; color: var(--muted);
-  margin-bottom: 5px; letter-spacing: 0.04em;
-}
-.field-input {
-  width: 100%;
-  background: var(--surf2);
-  border: 1px solid var(--border2);
-  border-radius: var(--rsm);
-  padding: 12px 15px;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s;
-}
+.field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; letter-spacing: 0.04em; }
+.field-input { width: 100%; background: var(--surf2); border: 1px solid var(--border2); border-radius: var(--rsm); padding: 12px 15px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
 .field-input:focus { border-color: var(--accent); }
 .field-input::placeholder { color: var(--muted2); }
 
-/* ── Button row ── */
+/* Button row */
 .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1.75rem; }
-.btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 11px 26px; border-radius: 99px; border: none;
-  cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
-}
+.btn { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; padding: 11px 26px; border-radius: 99px; border: none; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
 .btn-primary { background: var(--accent); color: #ffffff; }
 .btn-primary:hover { background: #1ab8f0; transform: translateY(-1px); }
 .btn-primary:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
-.btn-back {
-  background: transparent; color: var(--muted);
-  border: 1px solid var(--border2); font-size: 12px;
-}
+.btn-back { background: transparent; color: var(--muted); border: 1px solid var(--border2); font-size: 12px; }
 .btn-back:hover { color: var(--text); border-color: var(--border2); }
-.skip-link {
-  font-size: 12px; color: var(--muted2); cursor: pointer;
-  text-decoration: underline; text-underline-offset: 3px;
-}
+.skip-link { font-size: 12px; color: var(--muted2); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .skip-link:hover { color: var(--muted); }
 
-/* ── Cover screen ── */
-.cover-icon {
-  width: 72px; height: 72px; border-radius: 20px;
-  background: rgba(0,168,225,0.1); border: 1px solid rgba(0,168,225,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 32px; margin: 0 auto 1.5rem;
-}
-.cover-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.75rem; font-weight: 800; line-height: 1.15;
-  text-align: center; margin-bottom: 0.6rem;
-}
-.cover-sub {
-  font-size: 14px; color: var(--muted); text-align: center;
-  line-height: 1.6; margin-bottom: 2rem;
-  max-width: 420px; margin-left: auto; margin-right: auto;
-}
-.cover-chips {
-  display: flex; gap: 8px; justify-content: center;
-  flex-wrap: wrap; margin-bottom: 2rem;
-}
-.chip {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: var(--surf2); border: 1px solid var(--border);
-  border-radius: 99px; padding: 5px 13px;
-  font-size: 12px; color: var(--muted);
-}
+/* Cover screen */
+.cover-icon { width: 72px; height: 72px; border-radius: 20px; background: rgba(0,168,225,0.1); border: 1px solid rgba(0,168,225,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 1.5rem; }
+.cover-title { font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 800; line-height: 1.15; text-align: center; margin-bottom: 0.6rem; }
+.cover-sub { font-size: 14px; color: var(--muted); text-align: center; line-height: 1.6; margin-bottom: 2rem; max-width: 420px; margin-left: auto; margin-right: auto; }
+.cover-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.chip { display: inline-flex; align-items: center; gap: 5px; background: var(--surf2); border: 1px solid var(--border); border-radius: 99px; padding: 5px 13px; font-size: 12px; color: var(--muted); }
 .chip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
-/* ── Result screen ── */
+/* Result screen */
 .result-header { text-align: center; margin-bottom: 2rem; }
-.gauge-wrap {
-  position: relative; width: 160px; height: 160px;
-  margin: 0 auto 1.25rem;
-  display: flex; align-items: center; justify-content: center;
-}
-.gauge-wrap svg {
-  position: absolute; top: 0; left: 0;
-  transform: rotate(-90deg);
-}
-.gauge-pct {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 2.6rem; font-weight: 800;
-  line-height: 1; color: var(--accent);
-  position: relative; z-index: 1;
-}
+.gauge-wrap { position: relative; width: 160px; height: 160px; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center; }
+.gauge-wrap svg { position: absolute; top: 0; left: 0; transform: rotate(-90deg); }
+.gauge-pct { font-family: 'DM Sans', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--accent); position: relative; z-index: 1; }
 .gauge-pct span { font-size: 1rem; font-weight: 400; color: var(--muted); }
-.result-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem;
-}
-.result-sub {
-  font-size: 13px; color: var(--muted); line-height: 1.6;
-  max-width: 460px; margin: 0 auto 1.5rem;
-}
+.result-title { font-family: 'DM Sans', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; }
+.result-sub { font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 460px; margin: 0 auto 1.5rem; }
 
-/* ── Score breakdown ── */
-.score-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 8px; margin-bottom: 1.5rem;
-}
-.score-tile {
-  background: var(--surf2); border-radius: var(--rsm);
-  padding: 0.9rem 0.75rem; text-align: center;
-}
-.score-tile-val {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.3rem; font-weight: 800;
-  color: var(--accent);
-}
-.score-tile-lbl {
-  font-size: 10px; color: var(--muted);
-  margin-top: 2px; line-height: 1.4;
-  text-transform: uppercase; letter-spacing: 0.04em;
-}
+/* Score breakdown */
+.score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.5rem; }
+.score-tile { background: var(--surf2); border-radius: var(--rsm); padding: 0.9rem 0.75rem; text-align: center; }
+.score-tile-val { font-family: 'DM Sans', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--accent); }
+.score-tile-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Score bars */
 .score-bar-list { margin-bottom: 1.75rem; }
-.sbar-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--border);
-}
+.sbar-item { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
 .sbar-item:last-child { border-bottom: none; }
 .sbar-label { font-size: 12px; color: var(--muted); flex: 1; }
-.sbar-track {
-  width: 120px; height: 4px; background: var(--surf3);
-  border-radius: 99px; overflow: hidden; flex-shrink: 0;
-}
+.sbar-track { width: 120px; height: 4px; background: var(--surf3); border-radius: 99px; overflow: hidden; flex-shrink: 0; }
 .sbar-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width 0.8s 0.3s ease; }
-.sbar-pct  { font-size: 11px; font-weight: 600; color: var(--text); width: 32px; text-align: right; flex-shrink: 0; }
+.sbar-pct { font-size: 11px; font-weight: 600; color: var(--text); width: 32px; text-align: right; flex-shrink: 0; }
 
-/* ── CTA Box ── */
-.cta-box {
-  border-radius: var(--rsm);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  overflow: hidden;
-}
-.cta-box::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,168,225,0.12) 0%, rgba(79,142,247,0.08) 100%);
-  pointer-events: none;
-}
+/* CTA Box */
+.cta-box { border-radius: var(--rsm); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+.cta-box::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,168,225,0.12) 0%, rgba(79,142,247,0.08) 100%); pointer-events: none; }
 .cta-box { border: 1px solid rgba(0,168,225,0.25); }
-.cta-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.cta-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1rem; font-weight: 700; line-height: 1.45;
-  color: var(--text); margin-bottom: 0.6rem;
-}
+.cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.cta-text { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; line-height: 1.45; color: var(--text); margin-bottom: 0.6rem; }
 .cta-sub { font-size: 13px; color: var(--muted); line-height: 1.55; }
 
-/* ── Nota display ── */
-.nota-badge {
-  display: inline-flex; align-items: baseline; gap: 4px;
-  background: var(--surf2); border: 1px solid var(--border);
-  border-radius: 8px; padding: 4px 12px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.1rem; font-weight: 800; color: var(--gold);
-}
+/* Nota display */
+.nota-badge { display: inline-flex; align-items: baseline; gap: 4px; background: var(--surf2); border: 1px solid var(--border); border-radius: 8px; padding: 4px 12px; font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--gold); }
 .nota-badge span { font-size: 11px; color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 400; }
 
-
-
-
-
-/* ── Animations ── */
-
-/* ── Select consultor ── */
-.select-input {
-  width: 100%;
-  background: var(--surf2);
-  border: 1px solid var(--border2);
-  border-radius: var(--rsm);
-  padding: 12px 15px;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8299' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  transition: border-color 0.2s;
-}
+/* Select consultor */
+.select-input { width: 100%; background: var(--surf2); border: 1px solid var(--border2); border-radius: var(--rsm); padding: 12px 15px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8299' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; transition: border-color 0.2s; }
 .select-input:focus { border-color: var(--accent); }
 .select-input option { background: var(--surf2); color: var(--text); }
 
+/* Animations */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-@keyframes pulse  { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
+/* Screen */
 .screen { display: none; }
 .screen.active { display: block; animation: fadeUp 0.35s ease; }
+
+/* Score bar row (resultado) */
+.score-bar-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.score-bar-row:last-child { border-bottom: none; }
+.score-bar-label { font-size: 12px; color: var(--muted); flex: 1; }
+.score-bar-track { width: 120px; height: 4px; background: var(--surf3); border-radius: 99px; overflow: hidden; flex-shrink: 0; }
+.score-bar-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width 0.8s 0.3s ease; }
+.score-bar-val { font-size: 11px; font-weight: 600; color: var(--text); width: 40px; text-align: right; flex-shrink: 0; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- ══ Logo ══ -->
+  <!-- Logo -->
   <div class="top-logo">
     <div>
       <div class="logo-name">Holden Consultoria de Seguros</div>
-      
     </div>
   </div>
 
-  <!-- ══ Progress (hidden on cover/result) ══ -->
-  <div class="progress-bar-wrap" id="progress-wrap" style="display:none;">
+  <!-- Progress (hidden on cover/result) -->
+  <div class="progress-bar-wrap" id="progress-wrap" style="display:none">
     <div class="progress-meta">
       <span id="prog-step">Passo 1 de 12</span>
-      <span id="prog-section" style="color:var(--accent);">—</span>
+      <span id="prog-section" style="color:var(--accent)"></span>
     </div>
-    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0"></div></div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       TELA 0 — CAPA
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 0: CAPA -->
   <div id="s-cover" class="screen active">
-    <div class="card" style="text-align:center; padding: 2.5rem 2rem;">
-      <div class="cover-icon">🏥</div>
-      <h1 class="cover-title">De 0 a 100: Quanto sua corretora<br>realmente entrega para o seu RH?</h1>
+    <div class="card" style="text-align:center; padding: 2.5rem 2rem">
+      <div class="cover-icon">📊</div>
+      <h1 class="cover-title">De 0 a 100 — Quanto sua corretora<br>realmente entrega para o seu RH?</h1>
       <p class="cover-sub">Responda este diagnóstico em 3 minutos e descubra o quanto a sua corretora atual entrega.</p>
       <div class="cover-chips">
         <span class="chip"><span class="chip-dot"></span>Eficiência Operacional</span>
@@ -450,39 +207,29 @@ body {
         <span class="chip"><span class="chip-dot"></span>Previsibilidade</span>
         <span class="chip"><span class="chip-dot"></span>Inovação</span>
       </div>
-      <button class="btn btn-primary" style="margin:0 auto; display:inline-flex;" onclick="goTo('s-q6')">
-        Começar diagnóstico →
-      </button>
-      <p style="font-size:11px; color:var(--muted); margin-top:1rem;">Seus dados são tratados com confidencialidade conforme a LGPD · Holden Consultoria de Seguros</p>
+      <button class="btn btn-primary" style="margin: 0 auto; display:inline-flex" onclick="goTo('s-q6')">Começar diagnóstico</button>
+      <p style="font-size:11px; color:var(--muted); margin-top:1rem">Seus dados são tratados com confidencialidade conforme a LGPD · Holden Consultoria de Seguros</p>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       TELA 1 — IDENTIFICAÇÃO
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 1: Q6 — Eficiência SimNão -->
   <div id="s-q6" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Eficiência Operacional</div>
     <div class="card">
       <p class="q-number">Pergunta 1 de 9</p>
       <p class="q-text">A sua corretora contribui ativamente para reduzir a carga operacional do RH?</p>
       <div class="options" id="opts-q6">
-        <div class="opt" onclick="selectOpt('q6','sim',this)">
-          <div class="opt-key">A</div><div class="opt-txt">Sim</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q6','nao',this)">
-          <div class="opt-key">B</div><div class="opt-txt">Não</div>
-        </div>
+        <div class="opt" onclick="selectOpt('q6','sim',this)"><div class="opt-key">A</div><div class="opt-txt">Sim</div></div>
+        <div class="opt" onclick="selectOpt('q6','nao',this)"><div class="opt-key">B</div><div class="opt-txt">Não</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-cover')">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q6" onclick="nextFromQ6()" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-cover')">Voltar</button>
+        <button class="btn btn-primary" id="btn-q6" onclick="nextFromQ6()" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q7 — Serviços de eficiência (checkboxes)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 2: Q7 — Serviços checkboxes -->
   <div id="s-q7" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Eficiência Operacional</div>
     <div class="card">
@@ -490,68 +237,39 @@ body {
       <p class="q-text">Selecione o que ela oferece:</p>
       <p class="q-sub">Marque todos os serviços que sua corretora disponibiliza.</p>
       <div class="checks">
-        <div class="chk" onclick="toggleChk(this,'q7','profissional')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Profissional dedicado/alocado na empresa</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','faturamento')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Gestão de faturamento</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','movimentacoes')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Movimentações (inclusões, exclusões, alterações)</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','rateio')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Rateio de custos</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','concierge')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Atendimento concierge para liderança</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','atendimento')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Atendimento aos colaboradores (agendamento de consultas/exames)</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q7','inteligencia')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Inteligência e apoio à decisão</div>
-        </div>
+        <div class="chk" onclick="toggleChk(this,'q7','profissional')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Profissional dedicado/alocado na empresa</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','faturamento')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Gestão de faturamento</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','movimentacoes')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Movimentações (inclusões, exclusões, alterações)</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','rateio')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Rateio de custos</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','concierge')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Atendimento concierge para liderança</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','atendimento')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Atendimento aos colaboradores (agendamento de consultas/exames)</div></div>
+        <div class="chk" onclick="toggleChk(this,'q7','inteligencia')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Inteligência e apoio à decisão</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q6')">← Voltar</button>
-        <button class="btn btn-primary" onclick="goTo('s-q8')">Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q6')">Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('s-q8')">Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q8 — Análise Estratégica (Sim/Não)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 3: Q8 — Análise Estratégica SimNão -->
   <div id="s-q8" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Análise Estratégica</div>
     <div class="card">
       <p class="q-number">Pergunta 3 de 9</p>
       <p class="q-text">Você recebe análises estratégicas (e não apenas relatórios) para apoiar decisões?</p>
       <div class="options" id="opts-q8">
-        <div class="opt" onclick="selectOpt('q8','sim',this)">
-          <div class="opt-key">A</div><div class="opt-txt">Sim</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q8','nao',this)">
-          <div class="opt-key">B</div><div class="opt-txt">Não</div>
-        </div>
+        <div class="opt" onclick="selectOpt('q8','sim',this)"><div class="opt-key">A</div><div class="opt-txt">Sim</div></div>
+        <div class="opt" onclick="selectOpt('q8','nao',this)"><div class="opt-key">B</div><div class="opt-txt">Não</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="backFromQ8()">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q8" onclick="nextFromQ8()" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="backFromQ8()">Voltar</button>
+        <button class="btn btn-primary" id="btn-q8" onclick="nextFromQ8()" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q9 — Análises recebidas (checkboxes)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 4: Q9 — Análises checkboxes -->
   <div id="s-q9" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Análise Estratégica</div>
     <div class="card">
@@ -559,60 +277,37 @@ body {
       <p class="q-text">O que você recebe?</p>
       <p class="q-sub">Marque todas as análises que sua corretora entrega.</p>
       <div class="checks">
-        <div class="chk" onclick="toggleChk(this,'q9','sinistralidade')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Análise de sinistralidade</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q9','dashboards')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Dashboards (frequência x severidade)</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q9','previsibilidade')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Previsibilidade de custos/reajustes</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q9','grupos_risco')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Identificação de grupos de risco (crônicos, gestantes, etc.)</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q9','continuidade')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Riscos de continuidade (demitidos/aposentados)</div>
-        </div>
+        <div class="chk" onclick="toggleChk(this,'q9','sinistralidade')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Análise de sinistralidade</div></div>
+        <div class="chk" onclick="toggleChk(this,'q9','dashboards')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Dashboards frequência x severidade</div></div>
+        <div class="chk" onclick="toggleChk(this,'q9','previsibilidade')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Previsibilidade de custos/reajustes</div></div>
+        <div class="chk" onclick="toggleChk(this,'q9','gruposrisco')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Identificação de grupos de risco (crônicos, gestantes, etc.)</div></div>
+        <div class="chk" onclick="toggleChk(this,'q9','continuidade')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Riscos de continuidade (demitidos/aposentados)</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q8')">← Voltar</button>
-        <button class="btn btn-primary" onclick="goTo('s-q10')">Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q8')">Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('s-q10')">Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q10 — Gestão de Custos/Saúde (Sim/Não)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 5: Q10 — Gestão de Custos/Saúde SimNão -->
   <div id="s-q10" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Gestão de Custos e Saúde</div>
     <div class="card">
       <p class="q-number">Pergunta 5 de 9</p>
       <p class="q-text">A sua corretora apresenta planos concretos para reduzir custos e sinistralidade?</p>
       <div class="options" id="opts-q10">
-        <div class="opt" onclick="selectOpt('q10','sim',this)">
-          <div class="opt-key">A</div><div class="opt-txt">Sim</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q10','nao',this)">
-          <div class="opt-key">B</div><div class="opt-txt">Não</div>
-        </div>
+        <div class="opt" onclick="selectOpt('q10','sim',this)"><div class="opt-key">A</div><div class="opt-txt">Sim</div></div>
+        <div class="opt" onclick="selectOpt('q10','nao',this)"><div class="opt-key">B</div><div class="opt-txt">Não</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="backFromQ10()">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q10" onclick="nextFromQ10()" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="backFromQ10()">Voltar</button>
+        <button class="btn btn-primary" id="btn-q10" onclick="nextFromQ10()" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q11 — Planos de saúde (checkboxes)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 6: Q11 — Iniciativas de Saúde checkboxes -->
   <div id="s-q11" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Gestão de Custos e Saúde</div>
     <div class="card">
@@ -620,86 +315,55 @@ body {
       <p class="q-text">O que você recebe?</p>
       <p class="q-sub">Marque todas as iniciativas que sua corretora oferece.</p>
       <div class="checks">
-        <div class="chk" onclick="toggleChk(this,'q11','nr1')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Programas ligados à NR-1</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q11','assistente')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Acolhimento com assistente social</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q11','palestras')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Palestras de saúde e bem-estar</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q11','blitz')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Ações como Blitz da Saúde</div>
-        </div>
-        <div class="chk" onclick="toggleChk(this,'q11','mapeamento')">
-          <div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="chk-txt">Mapeamento do perfil de saúde da população</div>
-        </div>
+        <div class="chk" onclick="toggleChk(this,'q11','nr1')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Programas ligados à NR-1</div></div>
+        <div class="chk" onclick="toggleChk(this,'q11','assistente')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Acolhimento com assistente social</div></div>
+        <div class="chk" onclick="toggleChk(this,'q11','palestras')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Palestras de saúde e bem-estar</div></div>
+        <div class="chk" onclick="toggleChk(this,'q11','blitz')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Ações como Blitz da Saúde</div></div>
+        <div class="chk" onclick="toggleChk(this,'q11','mapeamento')"><div class="chk-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07090f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="chk-txt">Mapeamento do perfil de saúde da população</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q10')">← Voltar</button>
-        <button class="btn btn-primary" onclick="goTo('s-q12')">Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q10')">Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('s-q12')">Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q12 — Previsibilidade (3 opções)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 7: Q12 — Previsibilidade 3 opções -->
   <div id="s-q12" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Previsibilidade</div>
     <div class="card">
       <p class="q-number">Pergunta 7 de 9</p>
       <p class="q-text">Você sente que tem previsibilidade sobre os reajustes do plano de saúde?</p>
       <div class="options" id="opts-q12">
-        <div class="opt" onclick="selectOpt('q12','sim',this)">
-          <div class="opt-key">A</div><div class="opt-txt">Sim</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q12','parcialmente',this)">
-          <div class="opt-key">B</div><div class="opt-txt">Parcialmente</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q12','nao',this)">
-          <div class="opt-key">C</div><div class="opt-txt">Não</div>
-        </div>
+        <div class="opt" onclick="selectOpt('q12','sim',this)"><div class="opt-key">A</div><div class="opt-txt">Sim</div></div>
+        <div class="opt" onclick="selectOpt('q12','parcialmente',this)"><div class="opt-key">B</div><div class="opt-txt">Parcialmente</div></div>
+        <div class="opt" onclick="selectOpt('q12','nao',this)"><div class="opt-key">C</div><div class="opt-txt">Não</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="backFromQ12()">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q12" onclick="goTo('s-q13')" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="backFromQ12()">Voltar</button>
+        <button class="btn btn-primary" id="btn-q12" onclick="goTo('s-q13')" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q13 — Inovação (Sim/Não)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 8: Q13 — Inovação SimNão -->
   <div id="s-q13" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Inovação</div>
     <div class="card">
       <p class="q-number">Pergunta 8 de 9</p>
       <p class="q-text">Nos últimos 12 meses, sua corretora trouxe inovações ou melhorias relevantes?</p>
       <div class="options" id="opts-q13">
-        <div class="opt" onclick="selectOpt('q13','sim',this)">
-          <div class="opt-key">A</div><div class="opt-txt">Sim</div>
-        </div>
-        <div class="opt" onclick="selectOpt('q13','nao',this)">
-          <div class="opt-key">B</div><div class="opt-txt">Não</div>
-        </div>
+        <div class="opt" onclick="selectOpt('q13','sim',this)"><div class="opt-key">A</div><div class="opt-txt">Sim</div></div>
+        <div class="opt" onclick="selectOpt('q13','nao',this)"><div class="opt-key">B</div><div class="opt-txt">Não</div></div>
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q12')">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q13" onclick="nextFromQ13()" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q12')">Voltar</button>
+        <button class="btn btn-primary" id="btn-q13" onclick="nextFromQ13()" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q14 — Quais inovações (texto)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 8b: Q14 — Quais inovações texto -->
   <div id="s-q14" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Inovação</div>
     <div class="card">
@@ -707,50 +371,42 @@ body {
       <p class="q-text">Quais inovações ou melhorias foram essas?</p>
       <textarea class="txt-input" id="f-q14" placeholder="Descreva as inovações ou melhorias que sua corretora trouxe..."></textarea>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q13')">← Voltar</button>
-        <button class="btn btn-primary" onclick="goTo('s-q15')">Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q13')">Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('s-q15')">Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q15 — Nota 0-10
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 9: Q15 — Nota 0-10 -->
   <div id="s-q15" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Avaliação Geral</div>
     <div class="card">
       <p class="q-number">Pergunta 9 de 9</p>
       <p class="q-text">De 0 a 10, qual nota você daria para sua corretora atual?</p>
-      <div class="rating-row" id="rating-row">
-        <!-- generated by JS -->
-      </div>
+      <div class="rating-row" id="rating-row"></div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="backFromQ15()">← Voltar</button>
-        <button class="btn btn-primary" id="btn-q15" onclick="goTo('s-q15b')" disabled>Próximo →</button>
+        <button class="btn btn-back" onclick="backFromQ15()">Voltar</button>
+        <button class="btn btn-primary" id="btn-q15" onclick="goTo('s-q15b')" disabled>Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q15B — Qual a sua corretora
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 9b: Q15B — Qual a sua corretora -->
   <div id="s-q15b" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Avaliação Geral</div>
     <div class="card">
       <p class="q-number">Pergunta complementar</p>
       <p class="q-text">Qual a sua corretora?</p>
       <p class="q-sub">Campo opcional.</p>
-      <input type="text" class="field-input" id="f-q15b" placeholder="Digite o nome da corretora" />
+      <input type="text" class="field-input" id="f-q15b" placeholder="Digite o nome da corretora">
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q15b')">← Voltar</button>
-        <button class="btn btn-primary" onclick="goTo('s-q16')">Próximo →</button>
+        <button class="btn btn-back" onclick="goTo('s-q15')">Voltar</button>
+        <button class="btn btn-primary" onclick="goTo('s-q16')">Próximo</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q16 — O que sente falta (texto)
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 10: Q16 — O que sente falta -->
   <div id="s-q16" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Avaliação Geral</div>
     <div class="card">
@@ -758,54 +414,50 @@ body {
       <p class="q-text">O que você sente falta hoje no atendimento da sua corretora?</p>
       <textarea class="txt-input" id="f-q16" placeholder="Compartilhe livremente o que poderia ser melhor..."></textarea>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q15b')">← Voltar</button>
-        <button class="btn btn-primary" onclick="gotoIdentity()">Ver meu diagnóstico →</button>
+        <button class="btn btn-back" onclick="goTo('s-q15b')">Voltar</button>
+        <button class="btn btn-primary" onclick="gotoIdentity()">Ver meu diagnóstico</button>
       </div>
     </div>
   </div>
 
+  <!-- TELA 11: IDENTIFICAÇÃO -->
   <div id="s-identity" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Identificação</div>
     <div class="card">
-      <p class="q-text" style="margin-bottom:1.5rem;">Quase lá! Para visualizar seu diagnóstico, conta pra gente quem é você.</p>
+      <p class="q-text" style="margin-bottom:1.5rem">Quase lá! Para visualizar seu diagnóstico, conta pra gente quem é você.</p>
       <div class="field">
-        <label>Nome completo *</label>
-        <input type="text" class="field-input" id="f-nome" placeholder="Seu nome completo" />
+        <label>Nome completo</label>
+        <input type="text" class="field-input" id="f-nome" placeholder="Seu nome completo">
       </div>
       <div class="field">
-        <label>Número de telefone *</label>
-        <input type="tel" class="field-input" id="f-tel" placeholder="(11) 99999-9999" />
+        <label>Número de telefone</label>
+        <input type="tel" class="field-input" id="f-tel" placeholder="(11) 99999-9999">
       </div>
       <div class="field">
-        <label>E-mail corporativo *</label>
-        <input type="email" class="field-input" id="f-email" placeholder="voce@empresa.com.br" />
+        <label>E-mail corporativo</label>
+        <input type="email" class="field-input" id="f-email" placeholder="voce@empresa.com.br">
       </div>
       <div class="field">
-        <label>Empresa *</label>
-        <input type="text" class="field-input" id="f-empresa" placeholder="Nome da empresa" />
+        <label>Empresa</label>
+        <input type="text" class="field-input" id="f-empresa" placeholder="Nome da empresa">
       </div>
-      <div class="field" style="margin-bottom:0;">
-        <label>Cargo *</label>
-        <input type="text" class="field-input" id="f-cargo" placeholder="Ex: Gerente de RH, CHRO..." />
+      <div class="field" style="margin-bottom:0">
+        <label>Cargo</label>
+        <input type="text" class="field-input" id="f-cargo" placeholder="Ex: Gerente de RH, CHRO...">
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-q16')">← Voltar</button>
-        <button class="btn btn-primary" onclick="submitIdentity()">Ver diagnóstico →</button>
+        <button class="btn btn-back" onclick="goTo('s-q16')">Voltar</button>
+        <button class="btn btn-primary" onclick="submitIdentity()">Ver diagnóstico</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       Q6 — Eficiência Operacional (Sim/Não)
-  ════════════════════════════════════════════════ -->
-  <!-- ══════════════════════════════════════════════
-       CONSULTOR RESPONSÁVEL
-  ════════════════════════════════════════════════ -->
+  <!-- TELA 12: CONSULTOR -->
   <div id="s-consultor" class="screen">
     <div class="section-pill"><span class="section-dot"></span>Consultor</div>
     <div class="card">
-      <p class="q-text" style="margin-bottom:0.5rem;">Qual consultor está atendendo?</p>
-      <p class="q-sub" style="margin-bottom:1.25rem;">Selecione seu nome ou adicione o de alguém do estande.</p>
+      <p class="q-text" style="margin-bottom:0.5rem">Qual consultor está atendendo?</p>
+      <p class="q-sub" style="margin-bottom:1.25rem">Selecione seu nome ou adicione o de alguém do estande.</p>
       <div class="field">
         <label>Consultor responsável</label>
         <select class="select-input" id="sel-consultor" onchange="toggleOutroConsultor(this.value)">
@@ -819,111 +471,98 @@ body {
           <option value="Yuri Giovannini">Yuri Giovannini</option>
           <option value="outro">Promotores</option>
         </select>
-        <input type="text" class="field-input" id="txt-outro-consultor"
-               placeholder="Digite o nome do promotor"
-               style="display:none; margin-top:8px;" />
+        <input type="text" class="field-input" id="txt-outro-consultor" placeholder="Digite o nome do promotor" style="display:none; margin-top:8px">
       </div>
       <div class="btn-row">
-        <button class="btn btn-back" onclick="goTo('s-identity')">← Voltar</button>
-        <button class="btn btn-primary" onclick="submitConsultor()">Ver diagnóstico →</button>
+        <button class="btn btn-back" onclick="goTo('s-identity')">Voltar</button>
+        <button class="btn btn-primary" onclick="submitConsultor()">Ver diagnóstico</button>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-       RESULTADO
-  ════════════════════════════════════════════════ -->
+  <!-- RESULTADO -->
   <div id="s-result" class="screen">
     <div class="card">
+
       <!-- Gauge -->
       <div class="result-header">
         <div class="gauge-wrap">
           <svg width="160" height="160" viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="66" fill="none" stroke="var(--surf3)" stroke-width="9"/>
-            <circle cx="80" cy="80" r="66" fill="none" stroke="var(--accent)" stroke-width="9"
-                    stroke-linecap="round"
-                    id="gauge-ring"
-                    stroke-dasharray="414.7" stroke-dashoffset="414.7"
-                    style="transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);"/>
+            <circle cx="80" cy="80" r="66" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" id="gauge-ring" stroke-dasharray="414.7" stroke-dashoffset="414.7" style="transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1)"/>
           </svg>
           <div class="gauge-pct" id="res-pct">0<span>%</span></div>
         </div>
-        <p style="font-size:11px;color:var(--muted);margin-bottom:0.5rem;">PONTUAÇÃO DO DIAGNÓSTICO</p>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:0.5rem">PONTUAÇÃO DO DIAGNÓSTICO</p>
       </div>
 
       <!-- Score breakdown -->
       <div class="score-bar-list" id="score-bars"></div>
 
       <!-- Nota da corretora -->
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border);">
-        <span style="font-size:12px; color:var(--muted); flex:1;">Nota dada à corretora atual</span>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border)">
+        <span style="font-size:12px; color:var(--muted); flex:1">Nota dada à corretora atual</span>
         <div class="nota-badge" id="res-nota">— <span>/ 10</span></div>
       </div>
 
       <!-- CTA Box -->
       <div class="cta-box" id="cta-box">
-        <p class="cta-label" id="cta-label">—</p>
-        <p class="cta-text"  id="cta-title">—</p>
-        <p class="cta-sub"   id="cta-sub">—</p>
-      </div>
-            <!-- Botão novo quiz -->
-      <div style="display:flex; gap:10px; justify-content:center;">
-        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="novoQuiz()">
-          ↺ Novo diagnóstico
-        </button>
+        <p class="cta-label" id="cta-label"></p>
+        <p class="cta-text" id="cta-title"></p>
+        <p class="cta-sub" id="cta-sub"></p>
       </div>
 
-    </div>
+      <!-- Botão novo quiz -->
+      <div style="display:flex; gap:10px; justify-content:center">
+        <button class="btn btn-primary" style="width:100%; justify-content:center" onclick="novoQuiz()">Novo diagnóstico</button>
+      </div>
+
     </div>
   </div>
 
 </div><!-- /wrap -->
 
 <script>
-// ═══════════════════════════════════════════════════════════
-//  CONFIGURAÇÃO — atualize após cada novo deploy do Apps Script
-// ═══════════════════════════════════════════════════════════
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbwr6uZ7u61Pprq6of-Cq1nV64VoOT0VtWBHvLOXLhyH02tYgi0ZaC-mbvYuBoviqtZ9dg/exec";
+// ═══════════════════════════════════════════════════════════════════════
+//  CONFIGURAÇÃO — URL atualizada
+// ═══════════════════════════════════════════════════════════════════════
+const SHEETURL = 'https://script.google.com/macros/s/AKfycbyWiQMHm85_r0zJ2QHAxVDUL8i6I3eMjB_pLxs857WUDxkAFYzTE7-6LByhXItgVHdSXg/exec';
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  STATE
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 const state = {
   identity: {},
-  q6: null, q7: [],
-  q8: null, q9: [],
-  q10: null, q11: [],
-  q12: null,
-  q13: null, q14: '',
-  q15: null, q15b: '', q16: '',
-  _enviando: false  // MELHORIA: flag para evitar envio duplo
+  q6: null, q7: [], q8: null, q9: [], q10: null, q11: [],
+  q12: null, q13: null, q14: '', q15: null, q15b: '', q16: '',
+  consultor: '', enviando: false
 };
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  PROGRESS STEPS
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 const STEPS = {
-  's-cover'    : { n: 0,  total: 11, section: ''                        },
-  's-q6'       : { n: 1,  total: 11, section: 'Eficiência Operacional'  },
-  's-q7'       : { n: 2,  total: 11, section: 'Eficiência Operacional'  },
-  's-q8'       : { n: 3,  total: 11, section: 'Análise Estratégica'     },
-  's-q9'       : { n: 4,  total: 11, section: 'Análise Estratégica'     },
-  's-q10'      : { n: 5,  total: 11, section: 'Gestão de Custos e Saúde'},
-  's-q11'      : { n: 6,  total: 11, section: 'Gestão de Custos e Saúde'},
-  's-q12'      : { n: 7,  total: 11, section: 'Previsibilidade'         },
-  's-q13'      : { n: 8,  total: 11, section: 'Inovação'                },
-  's-q14'      : { n: 8,  total: 11, section: 'Inovação'                },
-  's-q15'      : { n: 9,  total: 11, section: 'Avaliação Geral'         },
-  's-q15b'     : { n: 9,  total: 11, section: 'Avaliação Geral'         },
-  's-q16'      : { n: 9,  total: 11, section: 'Avaliação Geral'         },
-  's-identity' : { n: 10, total: 11, section: 'Identificação'           },
-  's-consultor': { n: 11, total: 11, section: 'Consultor'               },
-  's-result'   : { n: 11, total: 11, section: ''                        }
+  's-cover':    { n: 0,  total: 11, section: '' },
+  's-q6':       { n: 1,  total: 11, section: 'Eficiência Operacional' },
+  's-q7':       { n: 2,  total: 11, section: 'Eficiência Operacional' },
+  's-q8':       { n: 3,  total: 11, section: 'Análise Estratégica' },
+  's-q9':       { n: 4,  total: 11, section: 'Análise Estratégica' },
+  's-q10':      { n: 5,  total: 11, section: 'Gestão de Custos e Saúde' },
+  's-q11':      { n: 6,  total: 11, section: 'Gestão de Custos e Saúde' },
+  's-q12':      { n: 7,  total: 11, section: 'Previsibilidade' },
+  's-q13':      { n: 8,  total: 11, section: 'Inovação' },
+  's-q14':      { n: 8,  total: 11, section: 'Inovação' },
+  's-q15':      { n: 9,  total: 11, section: 'Avaliação Geral' },
+  's-q15b':     { n: 9,  total: 11, section: 'Avaliação Geral' },
+  's-q16':      { n: 9,  total: 11, section: 'Avaliação Geral' },
+  's-identity': { n: 10, total: 11, section: 'Identificação' },
+  's-consultor':{ n: 11, total: 11, section: 'Consultor' },
+  's-result':   { n: 11, total: 11, section: '' }
 };
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  NAVIGATION
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 function goTo(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -935,16 +574,16 @@ function goTo(id) {
     prog.style.display = 'none';
   } else {
     prog.style.display = 'block';
-    const pct = Math.round((s.n / s.total) * 100);
+    const pct = Math.round(s.n / s.total * 100);
     document.getElementById('prog-fill').style.width = pct + '%';
-    document.getElementById('prog-step').textContent   = `Passo ${s.n} de ${s.total}`;
+    document.getElementById('prog-step').textContent = `Passo ${s.n} de ${s.total}`;
     document.getElementById('prog-section').textContent = s.section;
   }
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  INTERACTION HELPERS
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 function selectOpt(qid, val, el) {
   const container = el.parentElement;
   container.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
@@ -963,17 +602,13 @@ function toggleChk(el, qid, val) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  FLOW LOGIC
-// ═══════════════════════════════════════════════════════════
-
-// MELHORIA: validação de e-mail adicionada
-
-// Salva respostas abertas e navega para identificação
+// ═══════════════════════════════════════════════════════════════════════
 function gotoIdentity() {
-  state.q14 = document.getElementById('f-q14').value;
+  state.q14  = document.getElementById('f-q14').value;
   state.q15b = document.getElementById('f-q15b') ? document.getElementById('f-q15b').value : '';
-  state.q16 = document.getElementById('f-q16').value;
+  state.q16  = document.getElementById('f-q16').value;
   goTo('s-identity');
 }
 
@@ -983,31 +618,22 @@ function isValidEmail(email) {
 
 function submitIdentity() {
   const fields = [
-    { id: 'f-nome'   , key: 'nome'     },
-    { id: 'f-tel'    , key: 'telefone'  },
-    { id: 'f-email'  , key: 'email'     },
-    { id: 'f-empresa', key: 'empresa'   },
-    { id: 'f-cargo'  , key: 'cargo'     }
+    { id: 'f-nome',    key: 'nome' },
+    { id: 'f-tel',     key: 'telefone' },
+    { id: 'f-email',   key: 'email' },
+    { id: 'f-empresa', key: 'empresa' },
+    { id: 'f-cargo',   key: 'cargo' }
   ];
   let ok = true;
   fields.forEach(f => {
     const el = document.getElementById(f.id);
     const val = el.value.trim();
     let invalid = !val;
-
-    // MELHORIA: validação específica de formato de e-mail
-    if (f.key === 'email' && val && !isValidEmail(val)) {
-      invalid = true;
-      el.title = 'Informe um e-mail válido';
-    }
-
+    if (f.key === 'email' && val && !isValidEmail(val)) { invalid = true; el.title = 'Informe um e-mail válido'; }
     if (invalid) {
       el.style.borderColor = 'var(--danger)';
       ok = false;
-      el.addEventListener('input', () => {
-        el.style.borderColor = '';
-        el.title = '';
-      }, { once: true });
+      el.addEventListener('input', () => { el.style.borderColor = ''; el.title = ''; }, { once: true });
     } else {
       state.identity[f.key] = val;
     }
@@ -1015,23 +641,24 @@ function submitIdentity() {
   if (ok) goTo('s-consultor');
 }
 
-function nextFromQ6()  { if (state.q6  === 'sim') goTo('s-q7');  else goTo('s-q8'  ); }
-function backFromQ8()  { if (state.q6  === 'sim') goTo('s-q7');  else goTo('s-q6'  ); }
-function nextFromQ8()  { if (state.q8  === 'sim') goTo('s-q9');  else goTo('s-q10' ); }
-function backFromQ10() { if (state.q8  === 'sim') goTo('s-q9');  else goTo('s-q8'  ); }
-function nextFromQ10() { if (state.q10 === 'sim') goTo('s-q11'); else goTo('s-q12' ); }
-function backFromQ12() { if (state.q10 === 'sim') goTo('s-q11'); else goTo('s-q10' ); }
-function nextFromQ13() { if (state.q13 === 'sim') goTo('s-q14'); else goTo('s-q15' ); }
-function backFromQ15() { if (state.q13 === 'sim') goTo('s-q14'); else goTo('s-q13' ); }
+function nextFromQ6()  { if (state.q6  === 'sim') goTo('s-q7');  else goTo('s-q8'); }
+function backFromQ8()  { if (state.q6  === 'sim') goTo('s-q7');  else goTo('s-q6'); }
+function nextFromQ8()  { if (state.q8  === 'sim') goTo('s-q9');  else goTo('s-q10'); }
+function backFromQ10() { if (state.q8  === 'sim') goTo('s-q9');  else goTo('s-q8'); }
+function nextFromQ10() { if (state.q10 === 'sim') goTo('s-q11'); else goTo('s-q12'); }
+function backFromQ12() { if (state.q10 === 'sim') goTo('s-q11'); else goTo('s-q10'); }
+function nextFromQ13() { if (state.q13 === 'sim') goTo('s-q14'); else goTo('s-q15'); }
+function backFromQ15() { if (state.q13 === 'sim') goTo('s-q14'); else goTo('s-q13'); }
 
-// ═══════════════════════════════════════════════════════════
-//  RATING (Q15)
-// ═══════════════════════════════════════════════════════════
-(function buildRating() {
+// ═══════════════════════════════════════════════════════════════════════
+//  RATING Q15
+// ═══════════════════════════════════════════════════════════════════════
+function buildRating() {
   const row = document.getElementById('rating-row');
   for (let i = 0; i <= 10; i++) {
     const btn = document.createElement('button');
-    btn.className = 'rat-btn'; btn.textContent = i;
+    btn.className = 'rat-btn';
+    btn.textContent = i;
     btn.onclick = () => {
       row.querySelectorAll('.rat-btn').forEach(b => b.classList.remove('sel'));
       btn.classList.add('sel');
@@ -1040,77 +667,58 @@ function backFromQ15() { if (state.q13 === 'sim') goTo('s-q14'); else goTo('s-q1
     };
     row.appendChild(btn);
   }
-})();
+}
+buildRating();
 
-// ═══════════════════════════════════════════════════════════
-//  SCORING  (máx 90 pts = 90%)
-// ═══════════════════════════════════════════════════════════
-const Q7_PTS  = { profissional:2.5, faturamento:2, movimentacoes:2, rateio:2, concierge:2.5, atendimento:2, inteligencia:2 };
-const Q9_PTS  = { sinistralidade:3, dashboards:3, previsibilidade:3, grupos_risco:3, continuidade:3 };
-const Q11_PTS = { nr1:3, assistente:3, palestras:3, blitz:3, mapeamento:3 };
+// ═══════════════════════════════════════════════════════════════════════
+//  SCORING  (máx 90 pts)
+// ═══════════════════════════════════════════════════════════════════════
+const Q7PTS  = { profissional: 2.5, faturamento: 2, movimentacoes: 2, rateio: 2, concierge: 2.5, atendimento: 2, inteligencia: 2 };
+const Q9PTS  = { sinistralidade: 3, dashboards: 3, previsibilidade: 3, gruposrisco: 3, continuidade: 3 };
+const Q11PTS = { nr1: 3, assistente: 3, palestras: 3, blitz: 3, mapeamento: 3 };
 
 function calcScore() {
   let e1=0, e2=0, e3=0, e4=0, e5=0;
-
-  if (state.q6  === 'sim') { e1 += 5; state.q7.forEach(v  => { e1 += Q7_PTS[v]  || 0; }); e1 = Math.min(e1, 20); }
-  if (state.q8  === 'sim') { e2 += 5; state.q9.forEach(v  => { e2 += Q9_PTS[v]  || 0; }); e2 = Math.min(e2, 20); }
-  if (state.q10 === 'sim') { e3 += 5; state.q11.forEach(v => { e3 += Q11_PTS[v] || 0; }); e3 = Math.min(e3, 20); }
-  if      (state.q12 === 'sim'         ) e4 = 15;
-  else if (state.q12 === 'parcialmente') e4 = 7;
+  if (state.q6  === 'sim') { e1 = 5; state.q7.forEach(v  => { e1 += Q7PTS[v]  || 0; }); e1 = Math.min(e1, 20); }
+  if (state.q8  === 'sim') { e2 = 5; state.q9.forEach(v  => { e2 += Q9PTS[v]  || 0; }); e2 = Math.min(e2, 20); }
+  if (state.q10 === 'sim') { e3 = 5; state.q11.forEach(v => { e3 += Q11PTS[v] || 0; }); e3 = Math.min(e3, 20); }
+  if (state.q12 === 'sim') e4 = 15; else if (state.q12 === 'parcialmente') e4 = 7;
   if (state.q13 === 'sim') e5 = 15;
-
   const total = Math.round(e1 + e2 + e3 + e4 + e5);
   return { total, e1: Math.round(e1), e2: Math.round(e2), e3: Math.round(e3), e4, e5 };
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  CTA MESSAGES
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 function getCTA(pct) {
-  if (pct <= 30) return {
-    label: '🚨 Atenção: alto risco operacional',
-    title: 'Sua corretora atual está deixando muito valor na mesa.',
-    sub: 'Os pilares básicos de uma gestão de benefícios eficiente não estão presentes. Isso representa um risco real para o RH e para a empresa. A Holden foi criada exatamente para transformar essa realidade — com estrutura, estratégia e atendimento de verdade.'
-  };
-  if (pct <= 55) return {
-    label: '⚠️ Lacunas críticas identificadas',
-    title: 'Você recebe menos do que merece — e menos do que precisa.',
-    sub: 'Existem lacunas importantes na operação, análise e gestão de saúde que sua corretora não está cobrindo. Cada gap representa custo, retrabalho e decisões tomadas no escuro. A Holden pode cobrir o que falta com um modelo de parceria que vai muito além do convencional.'
-  };
-  if (pct <= 72) return {
-    label: '📊 Base razoável, mas incompleta',
-    title: 'Você tem uma estrutura, mas os diferenciais de verdade ainda estão faltando.',
-    sub: 'Sua corretora entrega o básico, mas fica aquém quando o assunto é análise estratégica, previsibilidade e inovação. São exatamente esses pilares que separam uma corretora mediana de uma parceira que gera resultado. Vale conversar sobre o que está ficando de lado.'
-  };
-  return {
-    label: '✅ Boa base — existe espaço para evoluir',
-    title: 'Você tem um bom serviço hoje. A Holden entrega o próximo nível.',
-    sub: 'Seu cenário é acima da média, mas ainda existe uma diferença importante entre o que você tem e o que é possível quando todos os pilares funcionam de forma integrada. A Holden trabalha com o 10% que transforma uma boa gestão em referência no mercado.'
-  };
+  if (pct <= 30) return { label: 'Atenção — alto risco operacional', title: 'Sua corretora atual está deixando muito valor na mesa.', sub: 'Os pilares básicos de uma gestão de benefícios eficiente não estão presentes. Isso representa um risco real para o RH e para a empresa. A Holden foi criada exatamente para transformar essa realidade — com estrutura, estratégia e atendimento de verdade.' };
+  if (pct <= 55) return { label: 'Lacunas críticas identificadas', title: 'Você recebe menos do que merece — e menos do que precisa.', sub: 'Existem lacunas importantes na operação, análise e gestão de saúde que sua corretora não está cobrindo. Cada gap representa custo, retrabalho e decisões tomadas no escuro. A Holden pode cobrir o que falta com um modelo de parceria que vai muito além do convencional.' };
+  if (pct <= 72) return { label: 'Base razoável, mas incompleta', title: 'Você tem uma estrutura, mas os diferenciais de verdade ainda estão faltando.', sub: 'Sua corretora entrega o básico, mas fica aquém quando o assunto é análise estratégica, previsibilidade e inovação. São exatamente esses pilares que separam uma corretora mediana de uma parceira que gera resultado. Vale conversar sobre o que está ficando de lado.' };
+  return { label: 'Boa base — existe espaço para evoluir', title: 'Você tem um bom serviço hoje. A Holden entrega o próximo nível.', sub: 'Seu cenário está acima da média, mas ainda existe uma diferença importante entre o que você tem e o que é possível quando todos os pilares funcionam de forma integrada. A Holden trabalha com o 10/10 que transforma uma boa gestão em referência no mercado.' };
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
 //  SHOW RESULTS
-// ═══════════════════════════════════════════════════════════
-
+// ═══════════════════════════════════════════════════════════════════════
 function submitConsultor() {
   state.consultor = getConsultor();
   showResults();
 }
 
 function showResults() {
-  // MELHORIA: evita envio duplo se botão for clicado rapidamente duas vezes
-  if (state._enviando) return;
-  state._enviando = true;
+  if (state.enviando) return;
+  state.enviando = true;
 
-  state.q14 = document.getElementById('f-q14').value;
+  state.q14  = document.getElementById('f-q14').value;
   state.q15b = document.getElementById('f-q15b') ? document.getElementById('f-q15b').value : '';
-  state.q16 = document.getElementById('f-q16').value;
+  state.q16  = document.getElementById('f-q16').value;
 
   const sc  = calcScore();
-  const pct = sc.total;
+  const pct = Math.round(sc.total / 90 * 100);
 
   goTo('s-result');
+
   setTimeout(() => {
     const circ   = 2 * Math.PI * 66;
     const offset = circ - (circ * pct / 100);
@@ -1123,21 +731,19 @@ function showResults() {
 
   const bars = [
     { label: 'Eficiência Operacional', pts: sc.e1, max: 20 },
-    { label: 'Análise Estratégica'   , pts: sc.e2, max: 20 },
+    { label: 'Análise Estratégica',    pts: sc.e2, max: 20 },
     { label: 'Gestão de Custos/Saúde', pts: sc.e3, max: 20 },
-    { label: 'Previsibilidade'        , pts: sc.e4, max: 15 },
-    { label: 'Inovação'               , pts: sc.e5, max: 15 }
+    { label: 'Previsibilidade',        pts: sc.e4, max: 15 },
+    { label: 'Inovação',               pts: sc.e5, max: 15 }
   ];
   const barsEl = document.getElementById('score-bars');
   barsEl.innerHTML = '';
   bars.forEach(b => {
-    const p = Math.round((b.pts / b.max) * 100);
+    const p = Math.round(b.pts / b.max * 100);
     barsEl.innerHTML += `
       <div class="score-bar-row">
         <span class="score-bar-label">${b.label}</span>
-        <div class="score-bar-track">
-          <div class="score-bar-fill" style="width:${p}%"></div>
-        </div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:${p}%"></div></div>
         <span class="score-bar-val">${b.pts}/${b.max}</span>
       </div>`;
   });
@@ -1147,37 +753,40 @@ function showResults() {
   document.getElementById('cta-title').textContent = cta.title;
   document.getElementById('cta-sub').textContent   = cta.sub;
 
-  sendToSheets(sc, pct, state.consultor || '—');
+  sendToSheets(sc, pct, state.consultor);
 }
 
-// ═══════════════════════════════════════════════════════════
-//  SEND TO SHEETS
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
+//  SEND TO SHEETS — CORRIGIDO
+// ═══════════════════════════════════════════════════════════════════════
 async function sendToSheets(sc, pct, consultor) {
-  if (!SHEET_URL || SHEET_URL.includes('COLE_')) return;
+  if (!SHEETURL || SHEETURL.includes('COLE')) return;
 
-  const faixas = ['Crítico (0-30%)'     , 'Lacunas críticas (31-55%)'  ,
-                  'Base razoável (56-72%)'  , 'Boa base (73-90%)'         ];
+  const faixas = ['Crítico 0-30', 'Lacunas críticas 31-55', 'Base razoável 56-72', 'Boa base 73-90'];
   const faixa  = pct <= 30 ? faixas[0] : pct <= 55 ? faixas[1] : pct <= 72 ? faixas[2] : faixas[3];
 
   const payload = {
     timestamp:           new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
-    nome:                state.identity.nome      || '',
-    telefone:            state.identity.telefone  || '',
-    email:               state.identity.email     || '',
-    empresa:             state.identity.empresa   || '',
-    cargo:               state.identity.cargo     || '',
-    q6_eficiencia:       state.q6  || 'Não respondeu',
-    q7_servicos:         state.q7.join(', ') || '—',
-    q8_analitica:        state.q8  || 'Não respondeu',
-    q9_analises:         state.q9.join(', ') || '—',
-    q10_custos:          state.q10 || 'Não respondeu',
-    q11_iniciativas:     state.q11.join(', ') || '—',
-    q12_previsibilidade: state.q12 || 'Não respondeu',
-    q13_inovacao:        state.q13 || 'Não respondeu',
-    q14_quais:           state.q14 || '—',
-    q15_nota:            state.q15 !== null ? state.q15 : '—',
-    q16_falta:           state.q16 || '—',
+    nome:                state.identity.nome      ?? '',
+    telefone:            state.identity.telefone  ?? '',
+    email:               state.identity.email     ?? '',
+    empresa:             state.identity.empresa   ?? '',
+    cargo:               state.identity.cargo     ?? '',
+
+    // ✅ Chaves com underscore — alinhadas ao Apps Script
+    q6_eficiencia:       state.q6    ?? 'Não respondeu',
+    q7_servicos:         state.q7.join(', '),
+    q8_analitica:        state.q8    ?? 'Não respondeu',
+    q9_analises:         state.q9.join(', '),
+    q10_custos:          state.q10   ?? 'Não respondeu',
+    q11_iniciativas:     state.q11.join(', '),
+    q12_previsibilidade: state.q12   ?? 'Não respondeu',
+    q13_inovacao:        state.q13   ?? 'Não respondeu',
+    q14_quais:           state.q14   ?? '',
+    q15_nota:            state.q15   !== null ? state.q15 : '',
+    q15b_corretora:      state.q15b  ?? '',   // ✅ Campo adicionado
+    q16_falta:           state.q16   ?? '',
+
     pts_eficiencia:      sc.e1,
     pts_analitica:       sc.e2,
     pts_saude:           sc.e3,
@@ -1185,38 +794,32 @@ async function sendToSheets(sc, pct, consultor) {
     pts_inovacao:        sc.e5,
     pontuacao_total:     sc.total,
     porcentagem:         pct,
-    faixa,
-    consultor:           consultor || '—'
+    faixa:               faixa,
+    consultor:           consultor
   };
 
-  // MELHORIA: AbortController para timeout de 15 segundos
   const controller = new AbortController();
   const timeoutId  = setTimeout(() => controller.abort(), 15000);
 
   try {
-    // MELHORIA: removido header Content-Type: application/json em modo no-cors
-    // (navegadores convertem para text/plain automaticamente; o corpo JSON é
-    // preservado e lido corretamente pelo Apps Script via e.postData.contents)
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      mode:   'no-cors',
-      body:   JSON.stringify(payload),
-      signal: controller.signal
+    // ✅ Content-Type: text/plain evita preflight CORS, Apps Script lê e.postData.contents normalmente
+    await fetch(SHEETURL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body:    JSON.stringify(payload),
+      signal:  controller.signal
     });
     clearTimeout(timeoutId);
+    console.log('Holden Diagnóstico — dados enviados com sucesso ✓');
   } catch (err) {
     clearTimeout(timeoutId);
-    console.error('[Holden Quiz] sendToSheets error:', err);
+    console.error('Holden Diagnóstico — erro no envio:', err);
   }
 }
 
-// ═══════════════════════════════════════════════════════════
-//  RESET
-// ═══════════════════════════════════════════════════════════
-
-// ═══════════════════════════════════════════════════════════
-//  CONSULTOR
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
+//  RESET / CONSULTOR
+// ═══════════════════════════════════════════════════════════════════════
 function toggleOutroConsultor(val) {
   const el = document.getElementById('txt-outro-consultor');
   el.style.display = val === 'outro' ? 'block' : 'none';
@@ -1225,30 +828,27 @@ function toggleOutroConsultor(val) {
 
 function getConsultor() {
   const sel = document.getElementById('sel-consultor').value;
-  if (sel === 'outro') {
-    return document.getElementById('txt-outro-consultor').value.trim() || '—';
-  }
-  return sel || '—';
+  if (sel === 'outro') return document.getElementById('txt-outro-consultor').value.trim();
+  return sel;
 }
 
 function novoQuiz() {
   Object.assign(state, {
-    identity:{}, q6:null, q7:[], q8:null, q9:[],
-    q10:null, q11:[], q12:null, q13:null, q14:'', q15:null, q16:'',
-    consultor: '', _enviando: false  // MELHORIA: reset da flag de envio
+    identity: {}, q6: null, q7: [], q8: null, q9: [], q10: null, q11: [],
+    q12: null, q13: null, q14: '', q15: null, q15b: '', q16: '',
+    consultor: '', enviando: false
   });
-  document.querySelectorAll('.opt').forEach(o    => o.classList.remove('sel'));
-  document.querySelectorAll('.chk').forEach(c    => c.classList.remove('chk-on'));
+  document.querySelectorAll('.opt').forEach(o  => o.classList.remove('sel'));
+  document.querySelectorAll('.chk').forEach(c  => c.classList.remove('chk-on'));
   document.querySelectorAll('.rat-btn').forEach(b => b.classList.remove('sel'));
   document.querySelectorAll('.field-input').forEach(i => i.value = '');
-  document.querySelectorAll('textarea').forEach(t  => t.value = '');
-  document.querySelectorAll('[id^=btn-q]').forEach(b => b.disabled = true);
+  document.querySelectorAll('textarea').forEach(t => t.value = '');
+  document.querySelectorAll('[id^=btn-]').forEach(b => { if (b.disabled !== undefined) b.disabled = true; });
   document.getElementById('sel-consultor').value = '';
   document.getElementById('txt-outro-consultor').style.display = 'none';
   document.getElementById('txt-outro-consultor').value = '';
   document.getElementById('gauge-ring').style.strokeDashoffset = '414.7';
   document.getElementById('res-pct').innerHTML = '0<span>%</span>';
-
   goTo('s-cover');
 }
 </script>
